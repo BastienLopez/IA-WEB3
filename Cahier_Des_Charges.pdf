@@ -25,18 +25,6 @@ L'objectif de ce projet est de créer un **assistant IA Web3** capable de :
 - **Fournir des prévisions de prix grâce à des modèles de Machine Learning**.
 - **Détecter les manipulations de marché et signaler les alertes critiques**.
 
-### **1.3 Cibles Utilisateurs**
-
-- **Traders particuliers & professionnels** : besoin d’indicateurs avancés pour la prise de décision.
-- **Fonds d’investissement crypto** : automatisation de la surveillance du marché.
-- **Startups & plateformes Web3** : Intégration des données via API.
-
-### **1.4 Enjeux du Projet**
-
-- **Automatiser la veille des tendances du marché** et réduire la subjectivité dans l’interprétation des signaux.
-- **Optimiser la gestion des investissements en crypto** en utilisant des modèles de prédiction avancés.
-- **Faciliter l’accès aux informations clés** à travers un tableau de bord ergonomique et des notifications intelligentes.
-
 ---
 
 ## **2. Fonctionnalités**
@@ -68,12 +56,6 @@ L'objectif de ce projet est de créer un **assistant IA Web3** capable de :
 - Détection des mouvements suspects (Pump & Dump, manipulations de marché).
 - Système de scoring des nouveaux projets crypto.
 
-### **2.2 Fonctionnalités secondaires**
-
-- Interface utilisateur personnalisable avec widgets.
-- Export des analyses et rapports.
-- Intégration avec des plateformes d’échange (Binance, Kraken, Coinbase Pro via API).
-
 ---
 
 ## **3. Contraintes Techniques**
@@ -87,112 +69,38 @@ L'objectif de ce projet est de créer un **assistant IA Web3** capable de :
 - **Base de Données** : PostgreSQL (données historiques), MongoDB (transactions), Redis (cache)
 - **Infra & Déploiement** : Kubernetes (K8s), Docker, GitHub Actions (CI/CD)
 
-### **3.2 Sécurité & Scalabilité**
+---
 
-- Authentification et permissions (OAuth, JWT).
-- Chiffrement des données sensibles.
-- Monitoring et scaling automatique sous Kubernetes.
+## **4. Schémas Visuels**
+
+### **🔷 Architecture Microservices sous Kubernetes**
+![Architecture Microservices sous Kubernetes](./Architecture_Microservices_sous_Kubernetes.svg)
+
+### **🔷 Processus d’Analyse des Sentiments (NLP)**
+![Processus d’Analyse des Sentiments](./Processus_d’Analyse_des_Sentiments_(NLP).svg)
+
+### **🔷 Schéma d’Interaction Utilisateur-Wallet-IA**
+![Schéma d’Interaction Utilisateur-Wallet-IA](./Schéma_d’Interaction_Utilisateur-Wallet-IA.svg)
+
+### **🔷 Processus de Prédiction IA avec Deep Learning**
+![Processus de Prédiction IA](./Processus_de_Prédiction_IA_avec_Deep_Learning.svg)
 
 ---
 
-## **4. Modèle Économique**
+## **5. Critères de Validation**
 
-- **Abonnement SaaS** : Accès premium aux prédictions IA et analyses avancées.
-- **API Payante** : Intégration des prédictions IA pour d'autres plateformes.
-- **Service de conseil automatisé** : Génération de rapports avancés pour traders et fonds d’investissement.
-- **Marketplace Web3** : Tokenisation des services et accès premium via smart contracts.
-
----
-
-## **5. Planning Prévisionnel**
-
-### **5.1 Phases du projet**
-
-| Étape       | Objectif                                                          | Durée      |
-| ----------- | ----------------------------------------------------------------- | ---------- |
-| **Phase 1** | Rédaction des documents (CDC, MOA, POC, Architecture)             | 1 mois     |
-| **Phase 2** | Développement de la documentation (Docusaurus) et du site vitrine | 1 mois     |
-| **Phase 3** | Développement des microservices et implémentation Web3            | 4-6 mois   |
-| **Phase 4** | Tests, déploiement sous Kubernetes et CI/CD                       | 1-2 mois   |
-| **Phase 5** | Lancement du projet et croissance                                 | En continu |
-
-### **5.2 Ressources et outils recommandés**
-
-- Documentation technique sous Docusaurus.
-- Création d’un site vitrine sous Next.js ou Webflow.
-- Gestion du projet via Notion ou Trello.
+✅ API fonctionnelle et documentée.  
+✅ Modèles d’IA entraînés et validés sur des datasets historiques.  
+✅ Dashboard interactif accessible aux utilisateurs Web3.  
+✅ Sécurité et scalabilité validées sous Kubernetes.  
+✅ Engagement des utilisateurs et feedback positif sur la plateforme.  
 
 ---
 
-## **6. Critères de Validation**
+## **6. Ressources et Références**
 
-✅ API fonctionnelle et documentée.
-✅ Modèles d’IA entraînés et validés sur des datasets historiques.
-✅ Dashboard interactif accessible aux utilisateurs Web3.
-✅ Sécurité et scalabilité validées sous Kubernetes.
-✅ Engagement des utilisateurs et feedback positif sur la plateforme.
-
----
-
-## **7. Éléments Graphiques et Médias à Intégrer**
-
-📌 **Schémas à inclure** :
-
-- Diagramme de l’architecture microservices (Web3, IA, NLP, Scraping).
-- Processus d’analyse des sentiments et de prédiction des prix.
-- Diagramme d’interaction utilisateur-wallet-IA.
-
-📌 **Liens et API à intégrer** :
-
-- API Web3.js ([https://web3js.readthedocs.io/](https://web3js.readthedocs.io/))
-- API Binance/KuCoin/Kraken pour récupérer les prix des cryptos.
-- Twitter API pour récupérer les tendances crypto.
-
-📌 **Sources d’informations crypto** :
-
-- CoinTelegraph, Decrypt, The Block, CoinDesk.
-- Analyse de tweets via NLP avec GPT/Transformers.
-
-#### **🔹 API & Documentation Techniques**  
-- **Web3.js Documentation** : [https://web3js.readthedocs.io/](https://web3js.readthedocs.io/)  
-- **Ethers.js (alternative Web3.js)** : [https://docs.ethers.io/v5/](https://docs.ethers.io/v5/)  
-- **Binance API pour récupérer les prix des cryptos** : [https://binance-docs.github.io/apidocs/spot/en/](https://binance-docs.github.io/apidocs/spot/en/)  
-- **Kraken API (Marché Crypto)** : [https://docs.kraken.com/rest/](https://docs.kraken.com/rest/)  
-- **KuCoin API** : [https://docs.kucoin.com/](https://docs.kucoin.com/)  
-- **CoinGecko API (Données Crypto, Market Cap, Volumes, etc.)** : [https://www.coingecko.com/en/api](https://www.coingecko.com/en/api)  
-- **Twitter API (Analyse des tendances et des tweets sur la crypto)** : [https://developer.twitter.com/en/docs/twitter-api](https://developer.twitter.com/en/docs/twitter-api)  
-- **Telegram API (Scraping des groupes de discussion crypto)** : [https://core.telegram.org/api](https://core.telegram.org/api)  
-- **Reddit API (Scraping des tendances crypto sur r/cryptocurrency, r/bitcoin, etc.)** : [https://www.reddit.com/dev/api/](https://www.reddit.com/dev/api/)  
-
-#### **🔹 Veille et Analyse du Marché Crypto**  
-- **CoinTelegraph (Actualités crypto)** : [https://cointelegraph.com/](https://cointelegraph.com/)  
-- **Decrypt (Actualités crypto, blockchain, DeFi, NFT)** : [https://decrypt.co/](https://decrypt.co/)  
-- **The Block (Analyses approfondies sur l’industrie crypto)** : [https://www.theblock.co/](https://www.theblock.co/)  
-- **CoinDesk (Données et analyses sur les cryptos)** : [https://www.coindesk.com/](https://www.coindesk.com/)  
-
----
-
-### **📌 Création des Schémas Visuels (Architecture & Processus IA)**  
-
-**Mermaid.js (Génération de diagrammes en Markdown pour la doc Docusaurus)** : [https://mermaid-js.github.io/](https://mermaid-js.github.io/)  
-
----
-
-### **📌 Schémas à créer et intégrer**  
-
-1. **🔷 Architecture Microservices sous Kubernetes**  
-   - Un schéma expliquant les différentes interactions entre les microservices (Scraping, NLP, IA, API Web3, Base de données).  
-   - **Format** : Flowchart UML ou schéma détaillé (Draw.io / Lucidchart recommandé).  
-
-2. **🔷 Processus d’Analyse des Sentiments (NLP)**  
-   - Schéma montrant le pipeline de collecte des données (Scraping → NLP → Analyse de sentiments → Score du marché).  
-   - **Format** : Mermaid.js si inclus dans la doc Docusaurus, sinon Excalidraw pour un format simple.  
-
-3. **🔷 Schéma d’Interaction Utilisateur-Wallet-IA**  
-   - Explication des connexions des utilisateurs avec leur portefeuille Web3 et l’IA pour récupérer des insights.  
-   - **Format** : UML, Mindmap, ou Excalidraw pour un rendu plus fluide.  
-
-4. **🔷 Processus de Prédiction IA avec Deep Learning**  
-   - Comment le modèle récupère les données, les traite et génère une prédiction de marché.  
-   - **Format** : Graphique basé sur le pipeline du modèle (Lucidchart / Draw.io conseillé).  
-
+- **[Web3.js Documentation](https://web3js.readthedocs.io/)**
+- **[Binance API](https://binance-docs.github.io/apidocs/spot/en/)**
+- **[CoinGecko API](https://www.coingecko.com/en/api)**
+- **[Twitter API](https://developer.twitter.com/en/docs/twitter-api)**
+- **[Telegram API](https://core.telegram.org/api)**
