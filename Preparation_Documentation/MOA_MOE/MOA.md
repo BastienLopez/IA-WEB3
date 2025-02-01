@@ -60,4 +60,4 @@ Le marché des cryptomonnaies est influencé par de nombreux facteurs :
 ---
 
 ## **📌 Diagramme de Processus Métier**
-![Diagramme de Processus Métier](.img/MOA_MOE/Diagramme_Processus_Métier.svg)
+![Diagramme de Processus Métier](..img/MOA_MOE/Diagramme_Processus_Métier.svg)
