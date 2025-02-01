@@ -77,7 +77,9 @@ L'objectif de ce projet est de créer un **assistant IA Web3** capable de :
 ![Architecture Microservices sous Kubernetes](../img/CDC/Architecture_Microservices_sous_Kubernetes.svg)
 
 ### **🔷 Processus d’Analyse des Sentiments (NLP)**
-![Processus d’Analyse des Sentiments](../img/CDC/Processus_d’Analyse_des_Sentiments_(NLP).svg)
+![Processus d’Analyse des Sentiments](../img/CDC/Processus_d’Analyse_des_Sentiments_NLP.svg)
+![Architecture Microservices sous Kubernetes](/img/CDC/Architecture_Microservices_sous_Kubernetes.svg)
+
 
 ### **🔷 Schéma d’Interaction Utilisateur-Wallet-IA**
 ![Schéma d’Interaction Utilisateur-Wallet-IA](../img/CDC/Schéma_d’Interaction_Utilisateur-Wallet-IA.svg)
