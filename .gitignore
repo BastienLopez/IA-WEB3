@@ -1,3 +1,2 @@
-node_modules
-web3-ai-vitrine/node_modules
-web3-ai-vitrine//app/node_modules
+node_modules/
+**/node_modules/
