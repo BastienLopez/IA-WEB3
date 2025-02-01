@@ -3,27 +3,27 @@ module.exports = {
     {
       type: 'doc',
       id: 'introduction',
-      label: 'INTRODUCTION',
+      label: 'Introduction',
     },
     {
       type: 'doc',
       id: 'architecture',
-      label: 'ARCHITECTURE',
+      label: 'Architecture',
     },
     {
       type: 'doc',
       id: 'api-documentation',
-      label: 'API DOCUMENTATION',
+      label: 'API Documentation',
     },
     {
       type: 'doc',
       id: 'installation-guide',
-      label: 'GUIDE D’INSTALLATION',
+      label: 'Guide d\'installation',
     },
     {
       type: 'doc',
       id: 'security',
-      label: 'SÉCURITÉ',
+      label: 'Sécurité',
     },
   ],
 };

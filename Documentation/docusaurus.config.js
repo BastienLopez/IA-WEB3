@@ -27,11 +27,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/votre-organisation/assistant-ia-web3/edit/main/docs/',
+          editUrl: 'https://github.com/BastienLopez/IA-WEB3/edit/main/docs/',
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/votre-organisation/assistant-ia-web3/edit/main/blog/',
+          editUrl: 'https://github.com/BastienLopez/IA-WEB3/edit/main/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -54,9 +54,8 @@ const config = {
           position: 'left',
           label: 'Documentation',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/votre-organisation/assistant-ia-web3',
+          href: 'https://github.com/BastienLopez/IA-WEB3',
           label: 'GitHub',
           position: 'right',
         },
@@ -83,7 +82,7 @@ const config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/votre-organisation/assistant-ia-web3',
+              href: 'https://github.com/BastienLopez/IA-WEB3',
             },
           ],
         },
