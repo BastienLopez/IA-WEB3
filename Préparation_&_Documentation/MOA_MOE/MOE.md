@@ -35,7 +35,7 @@ Ce document décrit l'architecture technique et les choix de conception pour le 
 ---
 
 ## **🗺 Architecture Microservices**
-![Architecture Microservices](.img/MOA_MOE/Architecture_Microservices.svg)
+![Architecture Microservices](..img/MOA_MOE/Architecture_Microservices.svg)
 ---
 
 ## **🔒 Sécurité & Scalabilité**
@@ -47,7 +47,7 @@ Ce document décrit l'architecture technique et les choix de conception pour le 
 ---
 
 ## **📌 Déploiement & CI/CD**
-![Déploiement & CI/CD](.img/MOA_MOE/CI_CD.svg)
+![Déploiement & CI/CD](..img/MOA_MOE/CI_CD.svg)
 ---
 
 ## **📎 Conclusion**
