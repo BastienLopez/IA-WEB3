@@ -1,0 +1,71 @@
+version: "3.8"
+
+services:
+  ### ✅ MongoDB
+  mongo:
+    image: mongo:7.0
+    container_name: web3-ai-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - web3-network
+
+  ### ✅ Backend (FastAPI)
+  web3-ai-backend:
+    build: ./web3-ai-backend
+    container_name: web3-ai-backend
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/web3-ai
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8000/health || exit 1"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+    networks:
+      - web3-network
+
+  ### ✅ Frontend (React)
+  web3-ai-frontend:
+    build: ./web3-ai-frontend
+    container_name: web3-ai-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      web3-ai-backend:
+        condition: service_healthy
+    networks:
+      - web3-network
+
+  ### ✅ Tests
+  web3-ai-test:
+    build: ./web3-ai-backend
+    container_name: web3-ai-test
+    entrypoint: ["pytest"]
+    depends_on:
+      web3-ai-backend:
+        condition: service_healthy
+    networks:
+      - web3-network
+
+volumes:
+  mongo-data:
+
+networks:
+  web3-network:
+    driver: bridge
