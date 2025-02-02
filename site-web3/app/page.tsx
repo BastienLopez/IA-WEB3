@@ -121,7 +121,6 @@ export default function Home() {
             <section id="Roadmap">
                 <div className="container">
                     <div className="row">
-
                         <div className="col-lg-12 col-12 text-center">
                             <h6>Roadmap et avancée du projet</h6> <br></br>
                             <img src="/images/Phase.svg" className="img-fluid" alt="" />  <br></br> <br></br>
@@ -133,11 +132,13 @@ export default function Home() {
                                 <nav className="nav nav-pills flex-column">
                                     <a className="nav-link smoothscroll" href="#item-1">Phase 1 : <strong>Scraping & NLP</strong></a>
 
-                                    <a className="nav-link smoothscroll" href="#item-2">Phase 2: <strong>IA & UI/UX</strong></a>
+                                    <a className="nav-link smoothscroll" href="#item-2">Phase 2: <strong>IA</strong></a>
 
-                                    <a className="nav-link smoothscroll" href="#item-3">Phase 3: <strong>Test & Beta</strong></a>
+                                    <a className="nav-link smoothscroll" href="#item-3">Phase 2: <strong>UI/UX</strong></a>
 
-                                    <a className="nav-link smoothscroll" href="#item-4">Phase 4: <strong>Déploiement</strong></a>
+                                    <a className="nav-link smoothscroll" href="#item-4">Phase 3: <strong>Test & Beta</strong></a>
+
+                                    <a className="nav-link smoothscroll" href="#item-5">Phase 4: <strong>Déploiement</strong></a>
                                 </nav>
                             </nav>
                         </div>
@@ -147,13 +148,59 @@ export default function Home() {
                                 <div className="scrollspy-example-item" id="item-1">
                                     <h5>Scraping & NLP</h5>
 
-                                    <p>Développement du scraping et du NLP pour capter et analyser les tendances du marché</p>
+                                    <section className="nlp-section section-padding bg-light text-dark">
+                                      <div className="container">
+                                        <h2 className="mb-4 text-center" style={{ fontSize: "1.5rem" }}>Scraping & NLP pour le Web3 🔍</h2>
+                                        <p className="text-center" style={{ fontSize: "0.9rem" }}>
+                                          Le marché crypto est fortement influencé par les réseaux sociaux et les actualités du Web3.
+                                          Notre IA utilise le NLP (Natural Language Processing) pour analyser et extraire des informations
+                                          pertinentes sur le marché en temps réel.
+                                        </p>
+
+                                        <h3 className="mt-5" style={{ fontSize: "1.2rem" }}>✅ Fonctionnalités clés :</h3>
+                                        <ul className="list-unstyled" style={{ fontSize: "0.7rem" }}>
+                                          <li className="mb-3">
+                                            <h4 style={{ fontSize: "1rem" }}>🔹 Surveillance en temps réel de l’actualité crypto 📰</h4>
+                                            <p style={{ fontSize: "0.8rem" }}>➜ Extraction de données depuis <strong>Twitter, Discord, Telegram, Reddit et Medium</strong>.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>➜ Analyse des <strong>dernières annonces, partenariats et lancements de projets</strong>.</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h4 style={{ fontSize: "1rem" }}>🔹 Analyse du sentiment du marché 📉📈</h4>
+                                            <p style={{ fontSize: "0.8rem" }}>➜ Notre IA classe les messages en <strong>positif, négatif ou neutre</strong> pour détecter les tendances.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>➜ Identification des <strong>buzz autour de certains tokens et NFT</strong> avant les pump/dump.</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h4 style={{ fontSize: "1rem" }}>🔹 Filtrage des Fake News et Rumeurs 🚨</h4>
+                                            <p style={{ fontSize: "0.8rem" }}>➜ Détection des <strong>scams, rug pulls et manipulations de marché</strong> en scannant les discussions suspectes.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>➜ Vérification croisée avec <strong>des sources fiables</strong> pour limiter les risques.</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h4 style={{ fontSize: "1rem" }}>🔹 Alertes et résumés intelligents ⚡</h4>
+                                            <p style={{ fontSize: "0.8rem" }}>➜ L’IA envoie des <strong>résumés automatisés</strong> des tendances en cours.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>➜ Possibilité de recevoir un <strong>digest quotidien ou en temps réel</strong> sur l’évolution du marché.</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </section>
                               </div>
 
                                 <div className="scrollspy-example-item" id="item-2">
-                                    <h5>IA & UI/UX</h5>
-
-                                    <p>Implémentation des modèles d’intelligence artificielle et mise en place de l’interface utilisateur</p>
+                                    <h5>IA</h5>
+                                    <section className="ai-section section-padding bg-light text-dark">
+                                      <div className="container">
+                                        <h2 className="mb-4 text-center" style={{ fontSize: "1rem" }}>Intelligence Artificielle (IA)</h2>
+                                        <p style={{ fontSize: "0.8rem" }}>Dans ce projet, l'IA est utilisée pour automatiser l'analyse des données Web3 et améliorer la prise de décision des utilisateurs.</p>
+                                        <p style={{ fontSize: "0.8rem" }}>L'objectif est de développer des modèles capables d’identifier les tendances du marché, d’anticiper les mouvements des cryptos et d’envoyer des recommandations stratégiques en fonction des habitudes de trading des utilisateurs.</p>
+                                        <h4 style={{ fontSize: "1rem" }}>✅ Fonctionnalités IA :</h4>
+                                        <ul className="list-unstyled" style={{ fontSize: "0.8rem" }}>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Analyse prédictive et modèles Machine Learning 📈</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>L’IA analysera les tendances des cryptos en combinant des modèles de prédiction de prix et des analyses on-chain.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Les utilisateurs recevront des alertes sur les signaux d’achat et de vente basés sur les mouvements des whales et d’autres métriques.</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </section>
 
                                     <div className="row">
                                         <div className="col-lg-6 col-12 mb-3">
@@ -167,9 +214,68 @@ export default function Home() {
                                 </div>
 
                                 <div className="scrollspy-example-item" id="item-3">
-                                    <h5>Test & Beta</h5>
+                                    <h5>UI/UX</h5>
+                                    <section className="uiux-section section-padding bg-light text-dark mt-5">
+                                      <div className="container">
+                                        <h2 className="mb-4 text-center" style={{ fontSize: "1rem" }}>Implémentation UI/UX</h2>
+                                        <p style={{ fontSize: "0.8rem" }}>L'interface utilisateur de ce projet sera pensée pour simplifier la gestion des wallets et des analyses de marché.</p>
+                                        <p style={{ fontSize: "0.8rem" }}>L’objectif est d’offrir un **dashboard clair et interactif**, permettant aux utilisateurs de visualiser en un coup d'œil l'état du marché, leurs transactions et les recommandations de l’IA.</p>
+                                        
+                                        <h4 style={{ fontSize: "1rem" }}>✅ Fonctionnalités UI/UX :</h4>
+                                        <ul className="list-unstyled" style={{ fontSize: "0.8rem" }}>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Dashboard interactif 📊</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>L’interface affichera des **graphiques dynamiques**, des **indicateurs personnalisés** et un **système d’alertes intelligentes**.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Chaque utilisateur pourra adapter l’affichage en fonction de ses besoins (mode clair/sombre, widgets configurables).</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Expérience utilisateur optimisée 🎯</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>Navigation fluide et rapide, avec un **système de filtres avancés** pour accéder facilement aux données pertinentes.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Intégration d’un **mode simplifié** pour les débutants et d’un **mode expert** pour les traders avancés.</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </section>
 
-                                    <p>Tests approfondis et lancement de la beta privée pour recueillir les retours utilisateurs</p>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-12 mb-3">
+                                            <img src="/images/portrait-mature-smiling-authoress-sitting-desk.jpg" className="scrollspy-example-item-image img-fluid" alt="" />
+                                        </div>
+
+                                        <div className="col-lg-6 col-12 mb-3">
+                                            <img src="/images/businessman-sitting-by-table-cafe.jpg" className="scrollspy-example-item-image img-fluid" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="scrollspy-example-item" id="item-4">
+                                    <h5>Test & Beta</h5>
+                                    <section className="test-beta-section section-padding bg-light text-dark">
+                                      <div className="container">
+                                        <h2 className="mb-4 text-center" style={{ fontSize: "1rem" }}>Phase de Test & Beta</h2>
+                                        <p style={{ fontSize: "0.8rem" }}>Cette phase est cruciale pour valider l'efficacité des modèles d’IA et s’assurer que l’interface utilisateur fonctionne sans bugs avant un déploiement à grande échelle.</p>
+                                        <p style={{ fontSize: "0.8rem" }}>L’objectif est de tester le système en conditions réelles, de recueillir les retours des utilisateurs et d’améliorer les fonctionnalités en fonction des feedbacks.</p>
+                                        
+                                        <h4 style={{ fontSize: "1rem" }}>✅ Étapes de la phase de Test :</h4>
+                                        <ul className="list-unstyled" style={{ fontSize: "0.8rem" }}>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Tests unitaires et d’intégration 🛠️</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>Chaque module de l’IA et de l’interface est testé individuellement pour détecter d’éventuelles erreurs.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Utilisation de **Jest, Cypress ou Playwright** pour automatiser les tests d’intégration et garantir la stabilité de l’application.</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Beta privée avec utilisateurs sélectionnés 👥</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>Un groupe restreint d’utilisateurs testera la plateforme en avant-première pour identifier les points forts et les axes d’amélioration.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Collecte des retours via **questionnaires, sessions d’analyse comportementale et enregistrement des interactions**.</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Optimisation continue et corrections 🛠️</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>Amélioration des performances et de l’ergonomie en fonction des retours des testeurs.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Correction des éventuels bugs et optimisation du modèle d’IA en **itérations successives**.</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </section>
 
                                     <div className="row align-items-center">
                                         <div className="col-lg-6 col-12">
@@ -178,10 +284,40 @@ export default function Home() {
                                     </div>
                                 </div>
 
-                                <div className="scrollspy-example-item" id="item-4">
+                                <div className="scrollspy-example-item" id="item-5">
                                     <h5>Déploiement</h5>
                                     
-                                    <p>Déploiement public avec améliorations continues basées sur les feedbacks et l’évolution du marché</p>
+                                    <section className="deployment-section section-padding bg-light text-dark">
+                                      <div className="container">
+                                        <h2 className="mb-4 text-center" style={{ fontSize: "1rem" }}>Phase de Déploiement</h2>
+                                        <p style={{ fontSize: "0.8rem" }}>La phase de déploiement est essentielle pour assurer une mise en production stable et sécurisée du projet, permettant aux utilisateurs finaux d’accéder à toutes les fonctionnalités avec une haute disponibilité.</p>
+                                        <p style={{ fontSize: "0.8rem" }}>L’objectif est d’établir une architecture robuste, d’optimiser les performances et de garantir la scalabilité de l’application.</p>
+                                        
+                                        <h4 style={{ fontSize: "1rem" }}>✅ Étapes de la phase de Déploiement :</h4>
+                                        <ul className="list-unstyled" style={{ fontSize: "0.8rem" }}>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Infrastructure et hébergement cloud ☁️</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>Mise en place d’un **hébergement sur Kubernetes, AWS, Vercel ou DigitalOcean**, selon les besoins de scalabilité.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Optimisation des performances backend et mise en cache avec **Redis** pour réduire la latence.</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 CI/CD et automatisation des déploiements 🚀</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>Configuration des pipelines **CI/CD avec GitHub Actions ou GitLab CI** pour un déploiement automatisé.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Tests automatisés avant chaque mise en production pour garantir la stabilité du projet.</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Sécurisation et monitoring 🔐</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>Implémentation de **pare-feu, gestion des clés API et authentification OAuth2/Web3** pour la sécurité.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Surveillance des logs et des performances via **Prometheus, Grafana et Elastic Stack**.</p>
+                                          </li>
+                                          <li className="mb-3">
+                                            <h5 style={{ fontSize: "1rem" }}>🔹 Mise en ligne et feedback des utilisateurs 🌍</h5>
+                                            <p style={{ fontSize: "0.8rem" }}>Déploiement progressif en **phases contrôlées (Canary Release, A/B testing)** pour tester l’adoption.</p>
+                                            <p style={{ fontSize: "0.8rem" }}>Collecte des retours des utilisateurs et ajustements continus pour améliorer l’expérience.</p>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </section>
 
                                     <img src="/images/portrait-mature-smiling-authoress-sitting-desk.jpg" className="scrollspy-example-item-image img-fluid mb-3" alt="" />
                                 </div>
@@ -200,17 +336,43 @@ export default function Home() {
                         <div className="col-lg-6 col-12">
                             <img src="/images/portrait-mature-smiling-authoress-sitting-desk.jpg" className="author-image img-fluid" alt="" />
                         </div>
-
+                
                         <div className="col-lg-6 col-12 mt-5 mt-lg-0">
-                            <h6>BLABLA C COOL</h6>
-
-                            <h2 className="mb-4">DOGGO</h2>
-
-                            <p>This isdogoustomizeisdogoustomizeisdogoustomize with the use of Bootstrap CSS classes</p>
+                            <h6>Surveillance du marché crypto</h6>
+                            <br></br><br></br><br></br>
+                            <h2 className="mb-4" style={{ textAlign: "center" }}>Restez informé du réseaux & Web3</h2>
                         </div>
 
                     </div>
                 </div>
+            </section>
+
+            <section className="technologies-section py-5 bg-light text-center">
+              <div className="container">
+                <h2 className="mb-4">Technologies utilisées</h2>
+                <div className="row justify-content-center">
+                  <div className="col-md-2 col-4">
+                    <img src="/images/logos/nextjs.svg" alt="Next.js" className="tech-logo img-fluid" style={{ width: "80px", height: "80px", objectFit: "contain", margin: "0 auto" }} />
+                    <p>Next.js</p>
+                  </div>
+                  <div className="col-md-2 col-4">
+                    <img src="/images/logos/react.svg" alt="React" className="tech-logo img-fluid" style={{ width: "80px", height: "80px", objectFit: "contain", margin: "0 auto" }} />
+                    <p>React</p>
+                  </div>
+                  <div className="col-md-2 col-4">
+                    <img src="/images/logos/python.svg" alt="Python" className="tech-logo img-fluid" style={{ width: "80px", height: "80px", objectFit: "contain", margin: "0 auto" }} />
+                    <p>Python</p>
+                  </div>
+                  <div className="col-md-2 col-4">
+                    <img src="/images/logos/solidity.svg" alt="Solidity" className="tech-logo img-fluid" style={{ width: "80px", height: "80px", objectFit: "contain", margin: "0 auto" }} />
+                    <p>Solidity</p>
+                  </div>
+                  <div className="col-md-2 col-4">
+                    <img src="/images/logos/nodejs.svg" alt="Node.js" className="tech-logo img-fluid" style={{ width: "80px", height: "80px", objectFit: "contain", margin: "0 auto" }} />
+                    <p>Node.js</p>
+                  </div>
+                </div>
+              </div>
             </section>
 
             <section className="author-section section-padding bg-dark text-light text-center w-100 py-4" id="DOGGO">
