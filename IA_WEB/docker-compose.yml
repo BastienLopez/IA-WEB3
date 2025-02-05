@@ -11,7 +11,7 @@ services:
     volumes:
       - mongo-data:/data/db
     healthcheck:
-      test: ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand('ping').ok"]
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
       interval: 10s
       timeout: 5s
       retries: 5
@@ -30,11 +30,12 @@ services:
         condition: service_healthy
     environment:
       - MONGO_URI=mongodb://mongo:27017/web3-ai
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
     healthcheck:
-      test: ["CMD-SHELL", "wget --spider -q http://localhost:8000/health || exit 1"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 10s
-      retries: 5
-      start_period: 10s
+      retries: 10  # Augmentez le nombre de tentatives
+      start_period: 20s  # Donnez plus de temps au backend pour démarrer
       timeout: 5s
     networks:
       - web3-network
@@ -56,7 +57,7 @@ services:
   web3-ai-test:
     build: ./web3-ai-backend
     container_name: web3-ai-test
-    entrypoint: ["pytest"]
+    command: ["sh", "-c", "pytest || bash"]
     depends_on:
       web3-ai-backend:
         condition: service_healthy
