@@ -14,7 +14,7 @@ jobs:
 
     services:
       mongo:
-        image: mongo
+        image: mongo:7.0
         ports:
           - 27017:27017
 
@@ -25,17 +25,17 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.10
+        python-version: 3.11
 
     - name: Install Python dependencies (backend)
       run: |
-        cd backend
+        cd web3-ai-backend
         pip install -r requirements.txt
 
     - name: Run backend tests
       run: |
-        cd backend
-        pytest ../tests/test_backend.py
+        cd web3-ai-backend
+        pytest ../tests/test_backend.py ../tests/test_mongo.py
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -44,11 +44,11 @@ jobs:
 
     - name: Install Node.js dependencies (frontend)
       run: |
-        cd frontend
+        cd web3-ai-frontend
         npm install
 
     - name: Run frontend build and tests
       run: |
-        cd frontend
+        cd web3-ai-frontend
         npm run build
         pytest ../tests/test_frontend.py
