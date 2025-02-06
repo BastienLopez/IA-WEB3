@@ -57,6 +57,8 @@ services:
   web3-ai-test:
     build: ./web3-ai-backend
     container_name: web3-ai-test
+    environment:
+      - PYTHONPATH=/app
     command: ["sh", "-c", "pytest || bash"]
     depends_on:
       web3-ai-backend:
