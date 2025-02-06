@@ -4,3 +4,5 @@ playwright
 pymongo
 requests
 pytest
+tweepy
+httpx

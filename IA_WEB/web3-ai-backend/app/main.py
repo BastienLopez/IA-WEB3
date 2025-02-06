@@ -1,5 +1,10 @@
 from fastapi import FastAPI, HTTPException
-import requests
+from app.services.scraper.coingecko import get_coingecko_data
+from app.services.scraper.binance import scrape_binance
+from app.services.scraper.kraken import scrape_kraken
+from app.services.scraper.coinbase import scrape_coinbase
+from app.services.scraper.twitter import get_tweets
+from app.services.database import analyze_without_storage
 import uvicorn
 
 app = FastAPI()
@@ -15,17 +20,24 @@ def health_check():
 @app.get("/scrape")
 def scrape_data():
     """
-    Simule un scraping de données et retourne un exemple de résultat.
-    Dans la vraie implémentation, Playwright ou BeautifulSoup serait utilisé.
+    Scrape les données de plusieurs sources et retourne un résultat combiné sans stockage.
     """
     try:
-        # Simuler une donnée scrapée
+        coingecko = get_coingecko_data()
+        binance = scrape_binance()
+        kraken = scrape_kraken()
+        coinbase = scrape_coinbase()
+        twitter = get_tweets("elonmusk")  # Exemple avec Elon Musk
+
         data = {
-            "crypto": "Bitcoin",
-            "price": "42000 USD",
-            "trend": "Bullish"
+            "coingecko": coingecko,
+            "binance": binance,
+            "kraken": kraken,
+            "coinbase": coinbase,
+            "twitter": twitter,
         }
-        return {"data": data}
+        
+        return analyze_without_storage(data)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur lors du scraping: {str(e)}")
 
