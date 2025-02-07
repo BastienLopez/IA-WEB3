@@ -6,3 +6,4 @@ requests
 pytest
 tweepy
 httpx
+numpy

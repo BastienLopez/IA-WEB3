@@ -1,14 +1,24 @@
-from fastapi import FastAPI, HTTPException
 import logging
-from app.services.scraper.coingecko import get_coingecko_data
+import uvicorn
+from app.services.scraper.coingecko import get_coingecko_data, get_fear_greed_index, get_btc_dominance
 from app.services.scraper.kraken import scrape_kraken
 from app.services.scraper.twitter import get_tweets
 from app.services.database import analyze_without_storage
-import uvicorn
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
-logging.basicConfig(level=logging.INFO) 
+logging.basicConfig(level=logging.INFO)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Remplacer par ["http://localhost:3000"] pour restreindre
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
@@ -69,5 +79,19 @@ def scrape_data():
         logging.error("❌ Erreur globale lors du scraping : %s", str(e))
         raise HTTPException(status_code=500, detail=f"Erreur lors du scraping: {str(e)}")
 
+@app.get("/scrape/coingecko")
+def scrape_coingecko_data():
+    """
+    Scrape les données de CoinGecko et retourne les indicateurs fondamentaux et sociaux.
+    """
+    try:
+        data = get_coingecko_data()
+        fear_greed_index = get_fear_greed_index()
+        btc_dominance = get_btc_dominance()
+        return {"message": "Scraping CoinGecko réussi", "data": data, "fear_greed_index": fear_greed_index, "btc_dominance": btc_dominance}
+    except Exception as e:
+        logging.error(f"❌ Erreur scraping CoinGecko: {str(e)}")
+        raise HTTPException(status_code=500, detail="Erreur lors du scraping CoinGecko")
+    
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
