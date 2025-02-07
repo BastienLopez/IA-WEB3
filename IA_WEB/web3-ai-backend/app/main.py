@@ -1,9 +1,7 @@
 from fastapi import FastAPI, HTTPException
 import logging
 from app.services.scraper.coingecko import get_coingecko_data
-from app.services.scraper.binance import scrape_binance
 from app.services.scraper.kraken import scrape_kraken
-from app.services.scraper.coinbase import scrape_coinbase
 from app.services.scraper.twitter import get_tweets
 from app.services.database import analyze_without_storage
 import uvicorn
@@ -23,13 +21,13 @@ def health_check():
 @app.get("/scrape")
 def scrape_data():
     """
-    Scrape les données des plateformes crypto et retourne un résultat combiné.
+    Scrape les données de CoinGecko, Kraken et Twitter.
     """
     try:
         logging.info("🔍 Début du scraping...")
 
         # Scraping des plateformes
-        coingecko = binance = kraken = coinbase = None
+        coingecko = kraken = None
 
         try:
             coingecko = get_coingecko_data()
@@ -38,36 +36,30 @@ def scrape_data():
             logging.error("❌ Erreur CoinGecko: %s", str(e))
 
         try:
-            binance = scrape_binance()
-            logging.info("✅ Scraping Binance OK")
-        except Exception as e:
-            logging.error("❌ Erreur Binance: %s", str(e))
-
-        try:
             kraken = scrape_kraken()
             logging.info("✅ Scraping Kraken OK")
         except Exception as e:
             logging.error("❌ Erreur Kraken: %s", str(e))
 
+        # Scraping Twitter (Analyse du sentiment de marché)
+        twitter_data = None
         try:
-            coinbase = scrape_coinbase()
-            logging.info("✅ Scraping Coinbase OK")
+            twitter_data = get_tweets("elonmusk")  # Exemple avec Elon Musk
+            logging.info("✅ Scraping Twitter OK")
         except Exception as e:
-            logging.error("❌ Erreur Coinbase: %s", str(e))
+            logging.error("❌ Erreur Twitter: %s", str(e))
 
         # Création de l'objet final
         data = {
             "coingecko": coingecko,
-            "binance": binance,
             "kraken": kraken,
-            "coinbase": coinbase,
+            "twitter": twitter_data,
         }
 
-        # Analyse des données
+        # Analyse des tendances
         trends = analyze_without_storage(data)
         logging.info("✅ Analyse OK")
 
-        # ✅ Ajout du message pour éviter l'erreur dans le test
         return {
             "message": "Scraping terminé avec succès",
             "data": trends

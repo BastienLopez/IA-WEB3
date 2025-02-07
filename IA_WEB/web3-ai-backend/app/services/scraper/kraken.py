@@ -1,9 +1,16 @@
 import requests
+import logging
+
+KRAKEN_API_URL = "https://api.kraken.com/0/public/Ticker?pair=XXBTZUSD"
 
 def scrape_kraken():
-    url = "https://api.kraken.com/0/public/Ticker?pair=XXBTZUSD"
-    response = requests.get(url)
-    if response.status_code == 200:
+    """
+    Récupère le prix du BTC/USD depuis l'API publique de Kraken.
+    """
+    try:
+        response = requests.get(KRAKEN_API_URL)
+        response.raise_for_status()
         return response.json()
-    else:
-        raise Exception(f"Erreur API Kraken: {response.status_code}")
+    except requests.exceptions.RequestException as e:
+        logging.error(f"❌ Erreur API Kraken : {e}")
+        return {"error": "Erreur lors du scraping Kraken"}
