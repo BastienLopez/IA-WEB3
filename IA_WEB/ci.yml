@@ -1,0 +1,54 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mongo:
+        image: mongo:7.0
+        ports:
+          - 27017:27017
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install Python dependencies (backend)
+      run: |
+        cd web3-ai-backend
+        pip install -r requirements.txt
+
+    - name: Run backend tests
+      run: |
+        cd web3-ai-backend
+        pytest ../tests/test_backend.py ../tests/test_mongo.py
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install Node.js dependencies (frontend)
+      run: |
+        cd web3-ai-frontend
+        npm install
+
+    - name: Run frontend build and tests
+      run: |
+        cd web3-ai-frontend
+        npm run build
+        pytest ../tests/test_frontend.py

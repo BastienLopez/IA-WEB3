@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+playwright
+pymongo
+requests
+pytest
+tweepy
+httpx
+numpy
